@@ -1,23 +1,24 @@
 <?php
 session_start();
 require('php/database.php');
-$sql = "SELECT id,title,subtext,text,image FROM articles ORDER BY date DESC LIMIT 12;";
+$sql = "SELECT id,title,subtext,text,image FROM articles ORDER BY date DESC";
 $result = $conn->query($sql);
 ?>
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php require("components/style.php"); ?>
-	<title>De Student - Home</title>
+	<title>De Student - Projecten</title>
 </head>
 
 <body>
-	<header>
+	<header class="archief">
 		<div class="container text-center">
-			<h1>De Student</h1>
-			<p>Software Developer - Web Developer - Student</p>
+			<h1>Archief</h1>
+			<p>Alle eerder geplaatste berichten centraal op één plek.</p>
 		</div>
 	</header>
 	<?php require("components/navbar.php"); ?>
@@ -43,6 +44,10 @@ $result = $conn->query($sql);
                 }
                 ?>
 			</div>
+		</div>
+		</div>
+		</div>
+		</div>
 		</div>
 	</section>
 	<!-- Optional JavaScript -->
