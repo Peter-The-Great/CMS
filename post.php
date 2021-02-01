@@ -5,7 +5,7 @@ if (!isset($_GET['id'])) {
 	return false;
 }
 
-if ($stmt = $conn->prepare("SELECT title,text,image FROM articles WHERE id = ?")) {
+if ($stmt = $conn->prepare("SELECT title,text,headimage FROM project WHERE id = ?")) {
 	$stmt->bind_param("i", $_GET["id"]);
 	$stmt->execute();
 	$stmt->store_result();

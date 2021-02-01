@@ -1,12 +1,13 @@
 <?php
 require('php/database.php');
-if($stmt = $conn->prepare("SELECT text FROM bio WHERE id = 1")) {
+if($stmt = $conn->prepare("SELECT text FROM about WHERE id = 1")) {
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($text);
-        $stmt->fetch();
+		$stmt->fetch();
+		$stmt->close();
     }
 }
 
@@ -24,7 +25,7 @@ if($stmt = $conn->prepare("SELECT text FROM bio WHERE id = 1")) {
 <body>
 	<header class="biografie">
 		<div class="container biografie-container text-center">
-		<img src="images/geurts.jpg" width="150" height="150">
+		<img src="uploads/profile/<?php echo $profilepic ?>" width="150" height="150">
 			<h2>Scheurmink Geurts</h2>
 		</div>
 	</header>

@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700&display=swap');
 header {
 	background-color: black;
-	background-image: url("../images/header.png");
-	background-size: cover;
+	background-image: url("../uploads/profile/background2.jpg");
+    background-size: cover;
+
     background-position: center;
     min-height: 250px;
     color: white;
 }
 .contact-header {
-    background-image: url("../images/kranten.jpg") !important;
-      
+    background-image: url("../uploads/profile/contact.jpg") !important;
 }
 .biografie {
 	background-image: url("../images/biografie.jpg") !important;  
 }
 .archief {
-	background-image: url("../images/archief.jpg") !important;  
+    background-image: url("../uploads/profile/projectback.png") !important;
+    color: black;
 }
 header p{
 	font-size: 150%;

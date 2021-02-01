@@ -1,5 +1,5 @@
 <?php
-
+require("../php/database.php");
 session_start();
 if(isset($_SESSION["loggedin"])) {
     header("Location: dashboard.php");
@@ -14,11 +14,11 @@ if(isset($_SESSION["loggedin"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php require("style.php"); ?>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>De Student Admin - Login</title>
 </head>
 
 <body>
-    <main class="container">
         <div class="login-box mx-auto shadow p-3 mb-5 bg-white rounded">
             <!-- Shadow, Center in the middle of screen -->
             <!-- Logo-->
@@ -32,7 +32,7 @@ if(isset($_SESSION["loggedin"])) {
                 </div>
                 <div class="form-group">
                     <label>Wachtwoord</label>
-                    <input name="password" id="password" class="form-control" placeholder="******" type="password">
+                    <input name="password" id="password" class="form-control" placeholder="******" type="password"><span data-bs-toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 </div>
                 <div class="form-group">
                     <button id="submit" type="submit" class="btn btn-dark btn-block" name="Inloggen">Inloggen</button>
@@ -51,12 +51,12 @@ if(isset($_SESSION["loggedin"])) {
                     }
                 ?>
             </form>
-            <a href="../index.php">← Terug naar homepage.</a>
+            <a href="../index.php">← Terug naar homepage</a>
         </div>
-    </main>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <?php require("scripts.php"); ?>
+    <script src="toggle.js"></script>
 </body>
 
 </html>

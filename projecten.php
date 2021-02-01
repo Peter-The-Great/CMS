@@ -1,7 +1,7 @@
 <?php
 session_start();
 require('php/database.php');
-$sql = "SELECT id,title,subtext,text,image FROM articles ORDER BY date DESC";
+$sql = "SELECT id,title,subtext,text,headimage FROM project ORDER BY date DESC";
 $result = $conn->query($sql);
 ?>
 <!doctype html>
@@ -17,8 +17,8 @@ $result = $conn->query($sql);
 <body>
 	<header class="archief">
 		<div class="container text-center">
-			<h1>Archief</h1>
-			<p>Alle eerder geplaatste berichten centraal op één plek.</p>
+			<h1>Projecten</h1>
+			<p>Alle gemaakte projecten centraal op één plek.</p>
 		</div>
 	</header>
 	<?php require("components/navbar.php"); ?>
@@ -27,7 +27,7 @@ $result = $conn->query($sql);
 			<div class="row">
 			<?php
                 foreach ($result as $item) {
-                $image = $item['image'];
+                $image = $item['headimage'];
                 echo "
                 <div class='colum col-sm-12 col-md-6 col-lg-4'>
 				<article class='card' style='background-image: url(";

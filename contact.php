@@ -8,6 +8,7 @@ require('php/database.php');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php require("components/style.php"); ?>
+    <link rel="stylesheet" type="text/css" href="css/start-bootstrap-styles.css">
 	<title>De Student - Contact</title>
 </head>
 

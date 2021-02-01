@@ -60,6 +60,9 @@ if (!isset($_SESSION["loggedin"])) {
                     <a class="nav-link text-secondary" href="biografie.php">Biografie</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link text-secondary" href="profile.php">Profiel</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-secondary" href="../php/login/logout.php">Logout</a>
                 </li>
             </ul>

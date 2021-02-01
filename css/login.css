@@ -1,5 +1,5 @@
 body {
-    background: url("../images/header.png") no-repeat center center fixed;
+    background: url("../uploads/profile/background.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 .login-box {
@@ -24,3 +24,15 @@ img {
 a {
     color: #343a40 !important;
 }
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .container{
+    padding-top:50px;
+    margin: auto;
+  }

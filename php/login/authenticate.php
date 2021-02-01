@@ -8,7 +8,7 @@
     }
 
 
-    if($stmt = $conn->prepare("SELECT id,username,password FROM users WHERE username = ?")) {
+    if($stmt = $conn->prepare("SELECT id,username,password FROM user WHERE username = ?")) {
         $stmt->bind_param("s", $_POST["username"]);
         $stmt->execute();
         $stmt->store_result();

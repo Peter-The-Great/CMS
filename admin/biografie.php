@@ -6,13 +6,14 @@ if (!isset($_SESSION["loggedin"])) {
     exit();
 }
 
-if($stmt = $conn->prepare("SELECT text FROM bio WHERE id = 1")) {
+if($stmt = $conn->prepare("SELECT text FROM about WHERE id = 1")) {
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($text);
         $stmt->fetch();
+        $stmt->close();
     }
 }
 
@@ -40,6 +41,9 @@ if($stmt = $conn->prepare("SELECT text FROM bio WHERE id = 1")) {
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark active" href="biografie.php">Biografie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark active" href="profile.php">Profiel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-secondary" href="../php/login/logout.php">Logout</a>

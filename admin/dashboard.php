@@ -5,7 +5,7 @@ if (!isset($_SESSION["loggedin"])) {
 	header("Location: ../index.php");
 	exit();
 }
-$sql = "SELECT id,title,date FROM articles ORDER BY date DESC;";
+$sql = "SELECT id,title,date FROM project ORDER BY date DESC;";
 $result = $conn->query($sql);
 $username = $_SESSION['name'];
 $id = $_SESSION['id'];
@@ -28,6 +28,9 @@ $id = $_SESSION['id'];
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-secondary" href="biografie.php">Biografie</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-secondary" href="Profile.php">Profiel</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-secondary" href="../php/login/logout.php">Logout</a>

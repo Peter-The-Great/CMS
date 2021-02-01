@@ -1,7 +1,7 @@
 <?php
     $user = 'root';
     $pass = '';
-    $db = 'cmstest';
+    $db = 'cms';
     $host = '127.0.0.1';
 
     $conn = new mysqli($host, $user, $pass, $db) or die("Unable to connect");

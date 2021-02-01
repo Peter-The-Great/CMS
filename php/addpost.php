@@ -9,7 +9,7 @@ if (!isset($_SESSION["loggedin"])) {
 
 // Insert into DATABASE
 if(isset($_POST["title"], $_POST["text"], $_POST["subtext"], $_POST['image'])){
-    if ($stmt = $conn->prepare("INSERT INTO articles (id, title, subtext, text, image) values (NULL, ?, ?, ?, ?);")) {
+    if ($stmt = $conn->prepare("INSERT INTO project (id, title, subtext, text, headimage) values (NULL, ?, ?, ?, ?);")) {
         $stmt->bind_param("ssss", $_POST['title'], $_POST['subtext'], $_POST['text'], $_POST['image']);
         $stmt->execute();
         header("Location: ../admin/dashboard.php");

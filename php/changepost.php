@@ -9,7 +9,7 @@ if (!isset($_SESSION["loggedin"])) {
 
 // Insert into DATABASE
 if(isset($_POST["title"], $_POST["text"], $_POST["subtext"], $_POST['image'])){
-    $sql = "UPDATE articles SET title=?, subtext=?, text=?, image=? WHERE id=?";
+    $sql = "UPDATE project SET title=?, subtext=?, text=?, headimage=? WHERE id=?";
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("ssssi", $_POST['title'], $_POST['subtext'], $_POST['text'], $_POST['image'], $_GET['id']);
         $stmt->execute();

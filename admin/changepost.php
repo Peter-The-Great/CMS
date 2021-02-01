@@ -6,7 +6,7 @@ if (!isset($_SESSION["loggedin"])) {
     exit();
 }
 
-if($stmt = $conn->prepare("SELECT title,subtext,text,image FROM articles WHERE id = ?")) {
+if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM project WHERE id = ?")) {
     $stmt->bind_param("i", $_GET["id"]);
     $stmt->execute();
     $stmt->store_result();
@@ -69,6 +69,9 @@ if($stmt = $conn->prepare("SELECT title,subtext,text,image FROM articles WHERE i
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-secondary" href="biografie.php">Biografie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="profile.php">Profiel</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-secondary" href="../php/login/logout.php">Logout</a>

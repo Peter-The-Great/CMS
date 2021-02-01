@@ -8,10 +8,13 @@
 					<a class="nav-link text-secondary" href="projecten.php">Projecten</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-dark" href="biografie.php">Over mij</a>
+					<a class="nav-link text-secondary" href="biografie.php">Over mij</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link text-secondary" href="contact.php">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-secondary" href="admin/">Login</a>
 				</li>
 			</ul>
 		</div>
