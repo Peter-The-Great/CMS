@@ -14,7 +14,6 @@ if(isset($_SESSION["loggedin"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php require("style.php"); ?>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>De Student Admin - Login</title>
 </head>
 
@@ -28,11 +27,13 @@ if(isset($_SESSION["loggedin"])) {
             <form method="POST" action="../php/login/authenticate.php">
                 <div class="form-group">
                     <label>Gebruikersnaam</label>
-                    <input name="username" id="username" class="form-control" placeholder="Gebruikersnaam" type="username">
+                    <input name="username" id="username" lenght="60" class="form-control" placeholder="Gebruikersnaam" type="username">
                 </div>
                 <div class="form-group">
                     <label>Wachtwoord</label>
-                    <input name="password" id="password" class="form-control" placeholder="******" type="password"><span data-bs-toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                    <input name="password" id="password" lenght="60" class="form-control rounded" placeholder="******" type="password">
+                    <button id="showitbtn" class="mt-1 btn btn-outline-secondary" type="button"><i id="eyes" class="fas fa-eye"></i>
+                    </button>
                 </div>
                 <div class="form-group">
                     <button id="submit" type="submit" class="btn btn-dark btn-block" name="Inloggen">Inloggen</button>
@@ -56,7 +57,18 @@ if(isset($_SESSION["loggedin"])) {
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <?php require("scripts.php"); ?>
-    <script src="toggle.js"></script>
+    <script>
+    	$("#showitbtn").click(function(){
+    		var input = $("#password");
+    		if (input.attr("type") == "password") {
+    			input.attr("type", "text");
+    			$("#eyes").toggleClass("fas fa-eye fa-eye-slash");
+    		} else {
+    			input.attr("type", "password");
+    			$("#eyes").toggleClass("fas fa-eye");
+    		}
+    	});
+    </script>
 </body>
 
 </html>

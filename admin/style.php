@@ -14,6 +14,6 @@ $profilequery->close();
 ?>
 <link rel="shortcut icon" type="image/x-icon" href="../uploads/profile/<?php echo $profilepic ?>">
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../css/font.css">
+<link rel="stylesheet" type="text/css" href="../css/fontawsome.css">
 <link rel="stylesheet" type="text/css" href="../css/custom.css">
 <link rel="stylesheet" type="text/css" href="../css/start-bootstrap-styles.css">
