@@ -24,15 +24,7 @@ img {
 a {
     color: #343a40 !important;
 }
-/*.field-icon {
+#showitbtn{
     float: right;
-    margin-left: -25px;
-    margin-top: -25px;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .container{
-    padding-top:50px;
-    margin: auto;
-  }*/
+    margin-top: -40px;
+}

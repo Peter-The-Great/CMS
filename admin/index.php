@@ -21,7 +21,7 @@ if(isset($_SESSION["loggedin"])) {
         <div class="login-box mx-auto shadow p-3 mb-5 bg-white rounded">
             <!-- Shadow, Center in the middle of screen -->
             <!-- Logo-->
-            <center><img src="../images/logo.png"></center>
+            <center><img class="img-fluid rounded-circle" src="../uploads/profile/<?php echo $profilepic ?>"></center>
             <h4 class="card-title mb-4 mt-1">Inloggen</h4>
             <!-- Forum Itself -->
             <form method="POST" action="../php/login/authenticate.php">
@@ -32,7 +32,7 @@ if(isset($_SESSION["loggedin"])) {
                 <div class="form-group">
                     <label>Wachtwoord</label>
                     <input name="password" id="password" lenght="60" class="form-control rounded" placeholder="******" type="password">
-                    <button id="showitbtn" class="mt-1 btn btn-outline-secondary" type="button"><i id="eyes" class="fas fa-eye"></i>
+                    <button id="showitbtn" class="btn" type="button"><i id="eyes" class="fas fa-eye"></i>
                     </button>
                 </div>
                 <div class="form-group">
@@ -57,18 +57,7 @@ if(isset($_SESSION["loggedin"])) {
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <?php require("scripts.php"); ?>
-    <script>
-    	$("#showitbtn").click(function(){
-    		var input = $("#password");
-    		if (input.attr("type") == "password") {
-    			input.attr("type", "text");
-    			$("#eyes").toggleClass("fas fa-eye fa-eye-slash");
-    		} else {
-    			input.attr("type", "password");
-    			$("#eyes").toggleClass("fas fa-eye");
-    		}
-    	});
-    </script>
+    <script src="toggle.js"></script>
 </body>
 
 </html>

@@ -47,16 +47,16 @@ $id = $_SESSION['id'];
 					<th scope="col">Id</th>
 					<th scope="col">Titel</th>
 					<th scope="col">Datum</th>
-					<th scope="col"></th>
-					<th scope="col"></th>
-					<th scope="col"></th>
+					<th scope="col">Bekijken</th>
+					<th scope="col">Aanpassen</th>
+					<th scope="col">Verwijderen</th>
 				</tr>
 			</thead>
 			<tbody>
 
 				<?php
 				foreach ($result as $item) {
-					echo "<td>" . $item["id"] . "</td>" . "<td>" . $item["title"] . "</td><td>" . $item["date"] . "</td></td><td><a href='../post.php?id=" . $item['id'] . "' class='btn btn-info'><i class='fas fa-eye'></i></a></td><td><a href='changepost.php?id=" . $item['id'] . "' class='btn btn-warning'><i class='fas fa-user-edit'></i></a></td><td><a href='../php/removepost.php?id=" . $item["id"] . "' class='btn btn-danger'><i class='fas fa-trash-alt'></i></a></td></tr>";
+					echo "<td>" . $item["id"] . "</td>" . "<td>" . $item["title"] . "</td><td>" .  $item["date"] . "</td></td><td><a href='../post.php?id=" . $item['id'] . "' class='btn btn-info btn-lg'><i class='fas fa-eye'></i></a></td><td><a href='changepost.php?id=" . $item['id'] . "' class='btn btn-warning btn-lg'><i class='fas fa-user-edit'></i></a></td><td><a href='../php/removepost.php?id=" . $item["id"] . "' class='btn btn-danger btn-lg'><i class='fas fa-trash-alt'></i></a></td></tr>";
 				}
 				?>
 			</tbody>

@@ -1,5 +1,6 @@
 <?php
 require('php/database.php');
+session_start();
 if (!isset($_GET['id'])) {
 	header("Location: ../index.php");
 	return false;
@@ -41,7 +42,10 @@ if ($stmt = $conn->prepare("SELECT title,text,headimage FROM project WHERE id = 
 		<div class="row">
 			<span class="maxw"><?php echo $text; ?></span>
 			<br><br>
-			<a class="maxw" href="index.php">← Terug naar homepage</a>
+			<a class="maxw mb-1" href="index.php">← Terug naar homepage</a>
+			<?php if(isset($_SESSION["loggedin"])) {
+				echo "<a class='maxw mt-3' href='admin/dashboard.php'>← Terug naar dashboard</a>";
+				} ?>
 		</div>
 
 	</section>
