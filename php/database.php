@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('error_reporting', E_ALL);
     $user = 'root';
     $pass = '';
     $db = 'cms';

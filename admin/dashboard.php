@@ -20,24 +20,8 @@ $id = $_SESSION['id'];
 	<?php require("style.php"); ?>
 	<title>De Colomnist Admin - Dashboard</title>
 </head>
-<nav class="navbar navbar-expand-md navbar-fixed-top navbar-light bg-light main-nav">
-	<div class="container">
-		<ul class="nav mx-auto">
-			<li class="nav-item">
-				<a class="nav-link active text-dark" href="dashboard.php">Posts</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link text-secondary" href="biografie.php">Biografie</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link text-secondary" href="Profile.php">Profiel</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link text-secondary" href="../php/login/logout.php">Logout</a>
-			</li>
-		</ul>
-	</div>
-</nav>
+<body>
+<?php require("navbar.php"); ?>
 <div class="container">
 	<?php echo '<a href="createpost.php" class="btn btn-success mt-5"><i class="fas fa-user-plus"></i> Post Aanmaken</a>' ?>
 	<div class="center-div">
@@ -67,5 +51,5 @@ $id = $_SESSION['id'];
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <?php require("scripts.php"); ?>
-
+</body>
 </html>

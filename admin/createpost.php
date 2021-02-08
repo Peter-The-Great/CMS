@@ -50,26 +50,9 @@ if (!isset($_SESSION["loggedin"])) {
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-fixed-top navbar-light bg-light main-nav">
-        <div class="container">
-            <ul class="nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link active text-dark" href="dashboard.php">Posts</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" href="biografie.php">Biografie</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" href="profile.php">Profiel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" href="../php/login/logout.php">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<?php require("navbar.php"); ?>
     <div class="container mt-2">
-        <form method="POST" action="../php/addpost.php">
+        <form method="POST" enctype="multipart/form-data" action="../php/addpost.php">
             <div class="form-group">
                 <label for="titel">Titel</label>
                 <input name="title" id="titel" class="form-control" placeholder="Titel" type="text" required>
@@ -83,8 +66,8 @@ if (!isset($_SESSION["loggedin"])) {
                 <textarea name="text" id="text"></textarea required>
             </div>
             <div class="form-group">
-                <label for="foto">Background Foto</label>
-                <input name="image" id="foto" class="form-control" placeholder="Background Foto URL" type="text" required>
+                <label for="foto">Achtergrond Foto</label>
+                <input name="image" type="file" required>
             </div>
             <div class="form-group">
                 <input type="submit" name="submit" class="btn btn-dark">

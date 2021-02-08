@@ -18,7 +18,7 @@ if(isset($_POST["text"])){
     
         $stmt->execute();
         $stmt->close();
-        header("Location: ../admin/dashboard.php");
+        header("Location: ../biografie.php");
     } 
     else {
         header('Location: ../admin/biografie.php?error=mysql');

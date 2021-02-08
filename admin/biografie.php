@@ -33,24 +33,7 @@ if($stmt = $conn->prepare("SELECT text FROM about WHERE id = 1")) {
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-fixed-top navbar-light bg-light main-nav">
-        <div class="container">
-            <ul class="nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-secondary active" href="dashboard.php">Posts</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark active" href="biografie.php">Biografie</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark active" href="profile.php">Profiel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" href="../php/login/logout.php">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<?php require("navbar.php"); ?>
     <div class="container mt-2">
         <form method="POST" action="../php/changebiografie.php">
             <div class="form-group">

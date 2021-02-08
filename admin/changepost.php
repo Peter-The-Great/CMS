@@ -61,26 +61,9 @@ if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM project WHER
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-fixed-top navbar-light bg-light main-nav">
-        <div class="container">
-            <ul class="nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link active text-dark" href="dashboard.php">Posts</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" href="biografie.php">Biografie</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" href="profile.php">Profiel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" href="../php/login/logout.php">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<?php require("navbar.php"); ?>
     <div class="container mt-2">
-        <form method="POST" action="../php/changepost.php?id=<?php echo $_GET['id']; ?>">
+        <form method="POST" enctype="multipart/form-data" action="../php/changepost.php?id=<?php echo $_GET['id']; ?>">
             <div class="form-group">
                 <label for="titel">Titel</label>
                 <input name="title" id="titel" class="form-control" placeholder="Titel" type="text" value="<?php echo $title;?>" required>
@@ -94,8 +77,12 @@ if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM project WHER
                 <textarea name="text" id="text"><?php echo $text;?></textarea required>
             </div>
             <div class="form-group">
-                <label for="foto">Background Foto</label>
-                <input name="image" id="foto" value="<?php echo $image;?>" class="form-control" placeholder="Background Foto URL" type="text" required>
+                <label for="foto">Huidige Achtergrond Foto</label><br>
+                <input hidden="1" readonly="1" name="Huidige_Afbeelding" value="<?php echo $image;?>"><img src="../<?php echo "" . $image . "";?>" width="120" height="110">
+            </div>
+            <div class="form-group">
+                <label for="foto">Achtergrond Foto</label>
+                <input name="image" type="file">
             </div>
             <div class="form-group">
                 <input type="submit" name="submit" class="btn btn-dark">
