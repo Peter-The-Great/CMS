@@ -20,13 +20,13 @@ if($stmt = $conn->prepare("SELECT text FROM about WHERE id = 1")) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php require("components/style.php"); ?>
-	<title>De Colomnist - Biografie</title>
+	<title><?php echo $open;?> - Biografie</title>
 </head>
 
 <body>
 	<header class="biografie">
 		<div class="container biografie-container text-center">
-		<img src="uploads/profile/<?php echo $profilepic ?>" width="150" height="150">
+		<img src="<?php echo $profilepic ?>" width="150" height="150">
 			<h2>Niels Segaar</h2>
 		</div>
 	</header>

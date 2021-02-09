@@ -29,7 +29,7 @@ if($stmt = $conn->prepare("SELECT text FROM about WHERE id = 1")) {
     <script src="https://cdn.tiny.cloud/1/swq7hpikkqwjjze9ad6mykwgy37w7e1mlvbbslqdqokoedyw/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     
 
-    <title>De Colomnist Admin - Biografie</title>
+    <title><?php echo $open; ?> - Biografie</title>
 </head>
 
 <body>

@@ -16,7 +16,6 @@ if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM project WHER
         $stmt->fetch();
     }
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,7 +56,7 @@ if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM project WHER
     </script>
     
 
-    <title>De Colomnist Admin - Change Post</title>
+    <title><?php echo $open; ?> - Verander post</title>
 </head>
 
 <body>
@@ -77,7 +76,7 @@ if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM project WHER
                 <textarea name="text" id="text"><?php echo $text;?></textarea required>
             </div>
             <div class="form-group">
-                <label for="foto">Huidige Achtergrond Foto</label><br>
+                <label for="Huidige_Afbeelding">Huidige Achtergrond Foto</label><br>
                 <input hidden="1" readonly="1" name="Huidige_Afbeelding" value="<?php echo $image;?>"><img src="../<?php echo "" . $image . "";?>" width="120" height="110">
             </div>
             <div class="form-group">

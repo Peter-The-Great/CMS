@@ -9,7 +9,7 @@ require('php/database.php');
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php require("components/style.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/start-bootstrap-styles.css">
-	<title>De Student - Contact</title>
+	<title><?php echo $open;?> - Contact</title>
 </head>
 
 <body>
@@ -67,15 +67,15 @@ require('php/database.php');
                 <div class="col-md-3 mx-auto mt-5 text-center">
 				<ul class="list-unstyled mb-0">
 					<li><i class="icon fas fa-map-marker-alt fa-2x"></i>
-						<p>Lange Voorhout 67, 2354 DK Den Haag</p>
+						<p><?php echo $adres;?></p>
 					</li>
 
 					<li><i class="icon fas fa-phone mt-4 fa-2x"></i>
-						<p>+31 6 40 89 99 88 4</p>
+						<p><?php echo $phone;?></p>
 					</li>
 
 					<li><i class="icon fas fa-envelope mt-4 fa-2x"></i>
-						<p>Student17@gmail.com</p>
+						<p><?php echo $emailen;?></p>
 					</li>
 				</ul>
 			</div>

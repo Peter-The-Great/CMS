@@ -18,7 +18,7 @@
             $stmt->fetch();
             
             $pswrd = $_POST["password"];
-            if (md5($pswrd) === $password) {
+            if (sha1($pswrd) === $password) {
                 session_regenerate_id();
                 $_SESSION["loggedin"] = TRUE;
                 $_SESSION["name"] = $username;

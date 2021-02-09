@@ -11,7 +11,7 @@
 				<a class="nav-link text-secondary" href="Profile.php">Profiel</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-secondary" href="../php/login/logout.php">Logout</a>
+				<a class="nav-link text-secondary" href="../php/login/logout.php">Loguit</a>
 			</li>
 		</ul>
 	</div>

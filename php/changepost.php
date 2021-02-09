@@ -43,8 +43,6 @@ elseif ($Afbeeldingnaam != $Huidig && in_array($type, $Toegestaan)) {
             header("Location: ../admin/dashboard.php");
         }
         else {
-            echo "Iets met de image";
-            exit();
             header('Location: ../admin/changepost.php?error=mysql');
         }
     }else {

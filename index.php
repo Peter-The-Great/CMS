@@ -10,13 +10,13 @@ $result = $conn->query($sql);
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php require("components/style.php"); ?>
-	<title>De Student - Home</title>
+	<title><?php echo $open;?> - Home</title>
 </head>
 
 <body>
 	<header>
 		<div class="container text-center">
-			<h1>De Student</h1>
+			<h1><?php echo $open;?></h1>
 			<p>Software Developer - Web Developer - Student</p>
 		</div>
 	</header>

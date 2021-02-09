@@ -14,7 +14,7 @@ if(isset($_SESSION["loggedin"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php require("style.php"); ?>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <title>De Student Admin - Login</title>
+    <title>Login</title>
 </head>
 
 <body>

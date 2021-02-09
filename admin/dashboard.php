@@ -9,7 +9,6 @@ $sql = "SELECT id,title,date FROM project ORDER BY date DESC;";
 $result = $conn->query($sql);
 $username = $_SESSION['name'];
 $id = $_SESSION['id'];
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,7 +17,7 @@ $id = $_SESSION['id'];
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php require("style.php"); ?>
-	<title>De Colomnist Admin - Dashboard</title>
+	<title><?php echo $open; ?> - Dashboard</title>
 </head>
 <body>
 <?php require("navbar.php"); ?>

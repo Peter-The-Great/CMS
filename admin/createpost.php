@@ -46,7 +46,7 @@ if (!isset($_SESSION["loggedin"])) {
     </script>
     
 
-    <title>De Colomnist Admin - Create Post</title>
+    <title><?php echo $open; ?>- Maak post</title>
 </head>
 
 <body>

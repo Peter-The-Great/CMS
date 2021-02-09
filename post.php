@@ -28,7 +28,7 @@ if ($stmt = $conn->prepare("SELECT title,text,headimage FROM project WHERE id = 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<?php require("components/style.php"); ?>
-	<title>De Student - <?php echo $title; ?></title>
+	<title><?php echo $open;?> - <?php echo $title; ?></title>
 </head>
 
 <body>
