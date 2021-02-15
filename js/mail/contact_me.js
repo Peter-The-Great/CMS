@@ -34,10 +34,10 @@ $(function () {
                 cache: false,
                 success: function () {
                     // Success message
-                    $("#success").html("<div class='alert alert-success'>");
+                    $("#success").html("<div class='alert alert-success alert-dismissible fade show'>");
                     $("#success > .alert-success")
                         .html(
-                            "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                            "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>"
                         )
                         .append("</button>");
                     $("#success > .alert-success").append(
@@ -49,10 +49,10 @@ $(function () {
                 },
                 error: function () {
                     // Fail message
-                    $("#success").html("<div class='alert alert-danger'>");
+                    $("#success").html("<div class='alert alert-danger alert-dismissible fade show'>");
                     $("#success > .alert-danger")
                         .html(
-                            "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                            "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>"
                         )
                         .append("</button>");
                     $("#success > .alert-danger").append(

@@ -6,7 +6,7 @@ if (!isset($_SESSION["loggedin"])) {
     exit();
 }
 
-if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM project WHERE id = ?")) {
+if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM projects WHERE id = ?")) {
     $stmt->bind_param("i", $_GET["id"]);
     $stmt->execute();
     $stmt->store_result();

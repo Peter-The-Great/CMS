@@ -13,9 +13,9 @@
 				<li class="nav-item">
 					<a class="nav-link text-secondary" href="contact.php">Contact</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link text-secondary" href="admin/">Login</a>
-				</li>
+				<?php if(!isset($_SESSION["loggedin"])) {
+				echo "<li class='nav-item'><a class='nav-link text-secondary' href='admin/'>Login</a></li>";
+				} ?>
 			</ul>
 		</div>
 	</nav>

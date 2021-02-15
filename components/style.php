@@ -1,6 +1,6 @@
 <?php
 $profileid = 1;
-$profilequery = $conn->prepare("SELECT `profile`, `openname`, `email`, `adres`, `phone` FROM `user` WHERE `ID` = ?");
+$profilequery = $conn->prepare("SELECT `profile`, `openname`, `email`, `adres`, `phone` FROM `users` WHERE `ID` = ?");
     $profilequery->bind_param("i", $profileid);
 	$profilequery->execute();
 	$profilequery->store_result();

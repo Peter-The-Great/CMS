@@ -20,7 +20,7 @@ if(isset($_POST["title"], $_POST["text"], $_POST["subtext"], $_POST['Huidige_Afb
     $sql = "";
     
     if (empty($Afbeelding) || $Afbeelding['size'] == 0) {
-    $sql = "UPDATE project SET title=?, subtext=?, text=? WHERE id=?";
+    $sql = "UPDATE projects SET title=?, subtext=?, text=? WHERE id=?";
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("sssi", $_POST['title'], $_POST['subtext'], $_POST['text'], $_GET['id']);
         $stmt->execute();
@@ -34,7 +34,7 @@ if(isset($_POST["title"], $_POST["text"], $_POST["subtext"], $_POST['Huidige_Afb
 elseif ($Afbeeldingnaam != $Huidig && in_array($type, $Toegestaan)) {
         unlink($unlink.$Huidig);
         move_uploaded_file($Tijdelijk, "../".$map.$Afbeeldingnaam);
-        $sql = "UPDATE project SET title=?, subtext=?, text=?, headimage=? WHERE id=?";
+        $sql = "UPDATE projects SET title=?, subtext=?, text=?, headimage=? WHERE id=?";
         $imagenew = $map.$Afbeeldingnaam;
         if ($stmt = $conn->prepare($sql)) {
             $stmt->bind_param("ssssi", $_POST['title'], $_POST['subtext'], $_POST['text'], $imagenew, $_GET['id']);

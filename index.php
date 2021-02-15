@@ -1,7 +1,7 @@
 <?php
 session_start();
 require('php/database.php');
-$sql = "SELECT id,title,subtext,text,headimage FROM project ORDER BY date DESC LIMIT 12;";
+$sql = "SELECT id,title,subtext,text,headimage FROM projects ORDER BY date DESC LIMIT 6;";
 $result = $conn->query($sql);
 ?>
 <!doctype html>
@@ -45,9 +45,15 @@ $result = $conn->query($sql);
 			</div>
 		</div>
 	</section>
+	<?php
+	require("onepage/bio.php");
+	require("onepage/contact.php");
+	?>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<?php require("components/scripts.php"); ?>
+	<script src="js/mail/jqBootstrapValidation.js"></script>
+	<script src="js/mail/contact_me.js"></script>
 </body>
 
 </html>

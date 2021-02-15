@@ -22,7 +22,7 @@ if (in_array($type,$Toegestaan)){
     header("Location: createpost.php?error=nietgeupload");
 }
 $afbeelding = $map.$imagenaam;
-    if ($stmt = $conn->prepare("INSERT INTO project (id, title, subtext, text, headimage) values (NULL,?, ?, ?, ?)")) {
+    if ($stmt = $conn->prepare("INSERT INTO projects (id, title, subtext, text, headimage) values (NULL,?, ?, ?, ?)")) {
         $stmt->bind_param("ssss", $_POST['title'], $_POST['subtext'], $_POST['text'], $afbeelding);
         $stmt->execute();
         header("Location: ../admin/dashboard.php");

@@ -2,7 +2,7 @@
 require("../php/database.php");
 session_start();
 
-if($stmt = $conn->prepare("SELECT `username`, `openname`, `profile`, `email`, `adres`, `phone` FROM `user` WHERE id = 1")) {
+if($stmt = $conn->prepare("SELECT `username`, `openname`, `profile`, `email`, `adres`, `phone` FROM `users` WHERE id = 1")) {
     $stmt->execute();
     $stmt->store_result();
 

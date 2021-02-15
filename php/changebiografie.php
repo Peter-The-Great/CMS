@@ -9,7 +9,7 @@ if (!isset($_SESSION["loggedin"])) {
 
 // Insert into DATABASE
 if(isset($_POST["text"])){
-    $sql = "UPDATE about SET text=? WHERE id=1";
+    $sql = "UPDATE aboutme SET text=? WHERE id=1";
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param(
             "s",

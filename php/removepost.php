@@ -12,7 +12,7 @@ if (!isset($_SESSION["loggedin"])) {
 $id = $_GET["id"];
 
 if(isset($id)){
-    $stmt = $conn->prepare("DELETE FROM project WHERE id = ?");
+    $stmt = $conn->prepare("DELETE FROM projects WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
 }

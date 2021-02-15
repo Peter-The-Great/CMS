@@ -18,13 +18,13 @@ header {
     background-image: url("../uploads/profile/projectback.png") !important;
     color: black;
 }
-header p{
+/* header p{
 	font-size: 150%;
-}
-header img{
-	border-radius: 50%;
+} */
+/* header img{
+    border-radius: 50%;
 	text-align: center;
-}
+} */
 
 * {
     font-family: 'Roboto', sans-serif;

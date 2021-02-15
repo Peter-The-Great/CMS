@@ -21,7 +21,7 @@ if(isset($_SESSION["loggedin"])) {
         <div class="login-box mx-auto shadow p-3 mb-5 bg-white rounded">
             <!-- Shadow, Center in the middle of screen -->
             <!-- Logo-->
-            <center><img class="img-fluid rounded-circle" src="../uploads/profile/<?php echo $profilepic ?>"></center>
+            <center><img class="img-fluid rounded-circle" src="../<?php echo $profilepic ?>"></center>
             <h4 class="card-title mb-4 mt-1">Inloggen</h4>
             <!-- Forum Itself -->
             <form method="POST" action="../php/login/authenticate.php">

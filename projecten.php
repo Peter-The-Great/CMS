@@ -1,7 +1,7 @@
 <?php
 session_start();
 require('php/database.php');
-$sql = "SELECT id,title,subtext,text,headimage FROM project ORDER BY date DESC";
+$sql = "SELECT id,title,subtext,text,headimage FROM projects ORDER BY date DESC";
 $result = $conn->query($sql);
 ?>
 <!doctype html>

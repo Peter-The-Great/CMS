@@ -5,7 +5,7 @@ if (!isset($_SESSION["loggedin"])) {
 	header("Location: ../index.php");
 	exit();
 }
-$sql = "SELECT id,title,date FROM project ORDER BY date DESC;";
+$sql = "SELECT id,title,date FROM projects ORDER BY date DESC;";
 $result = $conn->query($sql);
 $username = $_SESSION['name'];
 $id = $_SESSION['id'];
