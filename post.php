@@ -51,7 +51,9 @@ if ($stmt = $conn->prepare("SELECT title,text,headimage FROM projects WHERE id =
 	</section>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<?php require("components/scripts.php"); ?>
+	<?php
+	require("components/footer.php"); 
+	require("components/scripts.php"); ?>
 </body>
 
 </html>

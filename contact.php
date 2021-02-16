@@ -84,7 +84,9 @@ require('php/database.php');
 	</section>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<?php require("components/scripts.php"); ?>
+	<?php
+    require("components/footer.php");
+    require("components/scripts.php"); ?>
 	<script src="js/mail/jqBootstrapValidation.js"></script>
 	<script src="js/mail/contact_me.js"></script>
 </body>

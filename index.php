@@ -48,6 +48,7 @@ $result = $conn->query($sql);
 	<?php
 	require("onepage/bio.php");
 	require("onepage/contact.php");
+	require("components/footer.php");
 	?>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -43,7 +43,9 @@ if($stmt = $conn->prepare("SELECT text FROM aboutme WHERE id = 1")) {
 	</section>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<?php require("components/scripts.php"); ?>
+	<?php
+	require("components/footer.php");
+	require("components/scripts.php"); ?>
 </body>
 
 </html>
