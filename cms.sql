@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 15 feb 2021 om 13:42
+-- Gegenereerd op: 16 feb 2021 om 09:46
 -- Serverversie: 10.4.14-MariaDB
 -- PHP-versie: 7.4.10
 
@@ -50,7 +50,7 @@ CREATE TABLE `projects` (
   `title` varchar(64) NOT NULL,
   `subtext` longtext NOT NULL,
   `text` longtext NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp(),
+  `date` datetime NOT NULL DEFAULT current_timestamp(),
   `headimage` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -59,8 +59,13 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `title`, `subtext`, `text`, `date`, `headimage`) VALUES
-(1, '100 op de snelweg!', '<p>Morbi non eros massa. Nam erat sem, congue at sem ac, mollis rutrum turpis. Phasellus iaculis convallis nunc eget luctus. Quisque lectus lacus, efficitur vitae ex eleifend, dapibus pellentesque sapien. Praesent quis erat sed sem dictum commodo. Sed ultrices orci vitae aliquet pulvinar. Nam sodales sapien est, id gravida ex pharetra eu.</p>', '<p>Morbi non eros massa. Nam erat sem, congue at sem ac, mollis rutrum turpis. Phasellus iaculis convallis nunc eget luctus. Quisque lectus lacus, efficitur vitae ex eleifend, dapibus pellentesque sapien. Praesent quis erat sed sem dictum commodo. Sed ultrices orci vitae aliquet pulvinar. Nam sodales sapien est, id gravida ex pharetra eu.</p>', '2020-05-25', 'images/100.jpg'),
-(2, 'Halfmoon', '<p>Een bootstrap framework met built-in night mode</p>', '<p>In dit document ga ik het hebben over halfmoon, wat is halfmoon en waarom is het beter om te gebruiken dan bootstrap. Dat zal ik zelf hier vertelen.</p>\r\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/07/halfmoon.png?fit=1200%2C600&amp;ssl=1\" alt=\"\" width=\"598\" height=\"299\" /></p>\r\n<p>&nbsp;</p>', '2021-02-15', 'uploads/afbeelding_2021-02-15_115913.png');
+(1, '100 op de snelweg!', '<p>Morbi non eros massa. Nam erat sem, congue at sem ac, mollis rutrum turpis. Phasellus iaculis convallis nunc eget luctus. Quisque lectus lacus, efficitur vitae ex eleifend, dapibus pellentesque sapien. Praesent quis erat sed sem dictum commodo. Sed ultrices orci vitae aliquet pulvinar. Nam sodales sapien est, id gravida ex pharetra eu.</p>', '<p>Morbi non eros massa. Nam erat sem, congue at sem ac, mollis rutrum turpis. Phasellus iaculis convallis nunc eget luctus. Quisque lectus lacus, efficitur vitae ex eleifend, dapibus pellentesque sapien. Praesent quis erat sed sem dictum commodo. Sed ultrices orci vitae aliquet pulvinar. Nam sodales sapien est, id gravida ex pharetra eu.</p>', '2020-05-25 12:30:00', 'images/100.jpg'),
+(2, 'Halfmoon', '<p>Een bootstrap framework met built-in night mode</p>', '<p>In dit document ga ik het hebben over halfmoon, wat is halfmoon en waarom is het beter om te gebruiken dan bootstrap. Dat zal ik zelf hier vertelen.</p>\r\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/07/halfmoon.png?fit=1200%2C600&amp;ssl=1\" alt=\"\" width=\"598\" height=\"299\" /></p>\r\n<p>&nbsp;</p>', '2021-02-15 13:00:00', 'uploads/afbeelding_2021-02-15_115913.png'),
+(4, 'fewiofjewifjaewipofjiopwjf', '<p>hfwehfuiewhfuiewhf</p>', '<p>weifjioewjfiewjfiopewjfiejfipoawejf</p>', '2021-02-15 14:22:00', 'uploads/buzz.jpg'),
+(5, 'fewiofjewifjaewipofjiopwjf', '<p>hfwehfuiewhfuiewhf</p>', '<p>weifjioewjfiewjfiopewjfiejfipoawejf</p>', '2021-02-15 14:29:00', 'uploads/buzz.jpg'),
+(6, 'fewiofjewifjaewipofjiopwjf', '<p>hfwehfuiewhfuiewhf</p>', '<p>weifjioewjfiewjfiopewjfiejfipoawejf</p>', '2021-02-15 14:30:00', 'uploads/buzz.jpg'),
+(7, 'fewiofjewifjaewipofjiopwjf', '<p>hfwehfuiewhfuiewhf</p>', '<p>weifjioewjfiewjfiopewjfiejfipoawejf</p>', '2021-02-15 14:35:00', 'uploads/buzz.jpg'),
+(8, 'Github Toetss', '<p>Helps</p>', '<p>Helps</p>', '2021-02-15 14:37:37', 'uploads/2018-Ferrari-FXX-K-Evo-001-1080.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,15 +81,16 @@ CREATE TABLE `users` (
   `openname` text NOT NULL,
   `adres` text NOT NULL,
   `phone` text NOT NULL,
-  `email` text NOT NULL
+  `email` text NOT NULL,
+  `porto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `profile`, `openname`, `adres`, `phone`, `email`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'uploads/profile/Segaar.jpg', 'Niels Segaar', 'Heer Broekstraat 48', '+31-06958737273', 'Segaar86@Gmail.com');
+INSERT INTO `users` (`id`, `username`, `password`, `profile`, `openname`, `adres`, `phone`, `email`, `porto`) VALUES
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'uploads/profile/Segaar.jpg', 'Niels Segaar', 'Heer Broekstraat 48', '+31-06958737273', 'Segaar86@Gmail.com', 'https://84669.ict-lab.nl/Front2/Periode%201/Fluid%20Design/Portofolio/IMG/Pjotr%20Wisse%20English.pdf');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -116,7 +122,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

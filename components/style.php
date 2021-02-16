@@ -1,11 +1,11 @@
 <?php
 $profileid = 1;
-$profilequery = $conn->prepare("SELECT `profile`, `openname`, `email`, `adres`, `phone` FROM `users` WHERE `ID` = ?");
+$profilequery = $conn->prepare("SELECT `profile`, `openname`, `email`, `adres`, `phone`, `porto` FROM `users` WHERE `ID` = ?");
     $profilequery->bind_param("i", $profileid);
 	$profilequery->execute();
 	$profilequery->store_result();
 if ($profilequery->num_rows > 0) {
-    $profilequery->bind_result($profilepic, $open, $emailen, $adres, $phone);
+    $profilequery->bind_result($profilepic, $open, $emailen, $adres, $phone, $porto);
     $profilequery->fetch();
 }else{
     $profilequery->error_list();

@@ -77,6 +77,10 @@ require('php/database.php');
 					<li><i class="icon fas fa-envelope mt-4 fa-2x"></i>
 						<p><?php echo $emailen;?></p>
 					</li>
+
+                    <li><i class="icon fas fa-envelope mt-4 fa-2x"></i>
+						<a style="color: #0d6efd;" href="<?php echo $porto;?>"><p>Check Mijn Portfolio</p></a>
+					</li>
 				</ul>
 			</div>
                 </div>
