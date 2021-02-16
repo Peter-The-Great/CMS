@@ -6,7 +6,7 @@ if (!isset($_SESSION["loggedin"])) {
 	exit();
 }
 // Update into DATABASE
-if(isset($_POST["username"],$_POST["openname"],$_POST["email"],$_POST["Huidige_Afbeelding"])){
+if(isset($_POST["username"],$_POST["openname"],$_POST["email"],$_POST["Huidige_Afbeelding"], $_POST["port"])){
     
     $Huidig = $_POST['Huidige_Afbeelding'];
     $Afbeelding = $_FILES['image'];
@@ -19,9 +19,9 @@ if(isset($_POST["username"],$_POST["openname"],$_POST["email"],$_POST["Huidige_A
     $sql = "";
     
     if (empty($Afbeelding) || $Afbeelding['size'] == 0) {
-        $sql = "UPDATE users SET `username`=?, `openname`=?, `email`=?,`adres`=?,`phone`=? WHERE id=1";
+        $sql = "UPDATE users SET `username`=?, `openname`=?, `email`=?,`adres`=?,`phone`=?, `porto`=? WHERE id=1";
     if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("sssss", $_POST["username"], $_POST["openname"], $_POST["email"], $_POST["adres"], $_POST["phone"]);
+        $stmt->bind_param("ssssss", $_POST["username"], $_POST["openname"], $_POST["email"], $_POST["adres"], $_POST["phone"], $_POST["port"]);
     
         $stmt->execute();
         $stmt->close();
@@ -35,9 +35,9 @@ elseif ($Afbeeldingnaam != $Huidig && in_array($type, $Toegestaan)) {
     unlink($unlink.$Huidig);
     move_uploaded_file($Tijdelijk, "../".$map.$Afbeeldingnaam);
     $newimg = $map.$Afbeeldingnaam;
-    $sql = "UPDATE users SET `username`=?, `openname`=?, email=?, `adres`=?,`phone`=?, `profile`=? WHERE id=1";
+    $sql = "UPDATE users SET `username`=?, `openname`=?, email=?, `adres`=?,`phone`=?, `profile`=?, `phone`=?, `porto`=? WHERE id=1";
     if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("ssssss", $_POST["username"], $_POST["openname"], $_POST["email"], $_POST["adres"], $_POST["phone"], $newimg);
+        $stmt->bind_param("sssssss", $_POST["username"], $_POST["openname"], $_POST["email"], $_POST["adres"], $newimg, $_POST["phone"], $_POST["port"]);
         $stmt->execute();
         $stmt->close();
         header("Location: ../admin/dashboard.php");

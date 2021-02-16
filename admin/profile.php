@@ -2,12 +2,12 @@
 require("../php/database.php");
 session_start();
 
-if($stmt = $conn->prepare("SELECT `username`, `openname`, `profile`, `email`, `adres`, `phone` FROM `users` WHERE id = 1")) {
+if($stmt = $conn->prepare("SELECT `username`, `openname`, `profile`, `email`, `adres`, `phone`, `porto` FROM `users` WHERE id = 1")) {
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($uname, $open, $prof, $email, $adres, $phone);
+        $stmt->bind_result($uname, $open, $prof, $email, $adres, $phone, $porto);
         $stmt->fetch();
         $stmt->close();
     }
@@ -53,6 +53,10 @@ if($stmt = $conn->prepare("SELECT `username`, `openname`, `profile`, `email`, `a
             <div class="form-group">
                 <label for="foto">Achtergrond Foto</label>
                 <input name="image" class="form-control-file" type="file">
+            </div>
+            <div class="form-group">
+                <label for="port">Portofolio</label>
+                <input type="text" class="form-control rounded" name="port" id="port" value="<?php echo $porto; ?>" required>
             </div>
             <div class="form-group">
                 <input type="submit" name="submit" class="btn btn-dark">
