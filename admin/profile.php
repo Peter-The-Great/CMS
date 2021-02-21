@@ -31,6 +31,12 @@ if($stmt = $conn->prepare("SELECT `username`, `openname`, `profile`, `email`, `a
                 <input type="text" class="form-control rounded" name="username" id="username" value="<?php echo $uname; ?>" required>
             </div>
             <div class="form-group">
+                    <label>Wachtwoord</label>
+                    <input name="password" id="password" lenght="32" class="form-control rounded" placeholder="******" type="password" required> value="<?php echo $_SESSION['wachtwoord']?>">
+                    <button id="showitbtn" class="btn" type="button"><i id="eyes" class="fas fa-eye"></i>
+                    </button>
+                </div>
+            <div class="form-group">
                 <label for="openname">Echte Naam</label>
                 <input type="text" class="form-control rounded" name="openname" id="openname" value="<?php echo $open; ?>" required>
             </div>
@@ -72,5 +78,6 @@ if($stmt = $conn->prepare("SELECT `username`, `openname`, `profile`, `email`, `a
         </form>
     </div>
 <?php require("scripts.php"); ?>
+<script src="toggle.js"></script>
 </body>
 </html>

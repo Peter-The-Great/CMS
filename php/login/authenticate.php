@@ -18,6 +18,7 @@
             $stmt->fetch();
             
             $pswrd = $_POST["password"];
+            $_SESSION['wachtwoord'] = $pswrd;
             if (sha1($pswrd) === $password) {
                 session_regenerate_id();
                 $_SESSION["loggedin"] = TRUE;
