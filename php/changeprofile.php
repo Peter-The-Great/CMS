@@ -31,8 +31,6 @@ if(isset($_POST["username"],$_POST["password"],$_POST["openname"],$_POST["email"
         header('Location: ../admin/profile.php?error=mysql');
     } 
 }
-
-}
 elseif ($Afbeeldingnaam != $Huidig && in_array($type, $Toegestaan)) {
     unlink($unlink.$Huidig);
     move_uploaded_file($Tijdelijk, "../".$map.$Afbeeldingnaam);

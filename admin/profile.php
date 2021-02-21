@@ -20,6 +20,12 @@ if($stmt = $conn->prepare("SELECT `username`, `openname`, `profile`, `email`, `a
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php require("style.php"); ?>
+    <style>
+    	#showitbtn{
+    float: right;
+    margin-top: -40px;
+}
+    </style>
     <title><?php echo $open; ?> - Profiel</title>
 </head>
 <body>
@@ -32,7 +38,7 @@ if($stmt = $conn->prepare("SELECT `username`, `openname`, `profile`, `email`, `a
             </div>
             <div class="form-group">
                     <label>Wachtwoord</label>
-                    <input name="password" id="password" lenght="32" class="form-control rounded" placeholder="******" type="password" required> value="<?php echo $_SESSION['wachtwoord']?>">
+                    <input name="password" id="password" lenght="32" class="form-control rounded" placeholder="******" type="password" required value="<?php echo $_SESSION['wachtwoord']?>">
                     <button id="showitbtn" class="btn" type="button"><i id="eyes" class="fas fa-eye"></i>
                     </button>
                 </div>
