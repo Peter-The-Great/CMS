@@ -22,7 +22,7 @@ if(isset($_POST["title"], $_POST["text"], $_POST["subtext"], $_POST['Huidige_Afb
     if (empty($Afbeelding) || $Afbeelding['size'] == 0) {
     $sql = "UPDATE projects SET title=?, subtext=?, text=? WHERE id=?";
     if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("sssi", $_POST['title'], $_POST['subtext'], $_POST['text'], $_GET['id']);
+        $stmt->bind_param("ssss", $_POST['title'], $_POST['subtext'], $_POST['text'], $_GET['id']);
         $stmt->execute();
         //$stmt->close();
         header("Location: ../admin/dashboard.php");
@@ -33,11 +33,12 @@ if(isset($_POST["title"], $_POST["text"], $_POST["subtext"], $_POST['Huidige_Afb
 } 
 elseif ($Afbeeldingnaam != $Huidig && in_array($type, $Toegestaan)) {
         unlink($unlink.$Huidig);
-        move_uploaded_file($Tijdelijk, "../".$map.$Afbeeldingnaam);
-        $sql = "UPDATE projects SET title=?, subtext=?, text=?, headimage=? WHERE id=?";
         $imagenew = $map.$Afbeeldingnaam;
+        $new_str = str_replace(' ', '', $imagenew);
+        move_uploaded_file($Tijdelijk, "../".$new_str);
+        $sql = "UPDATE projects SET title=?, subtext=?, text=?, headimage=? WHERE id=?";
         if ($stmt = $conn->prepare($sql)) {
-            $stmt->bind_param("ssssi", $_POST['title'], $_POST['subtext'], $_POST['text'], $imagenew, $_GET['id']);
+            $stmt->bind_param("ssssi", $_POST['title'], $_POST['subtext'], $_POST['text'], $new_str, $_GET['id']);
             $stmt->execute();
             //$stmt->close();
             header("Location: ../admin/dashboard.php");

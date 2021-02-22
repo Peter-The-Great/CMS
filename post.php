@@ -7,7 +7,7 @@ if (!isset($_GET['id'])) {
 }
 
 if ($stmt = $conn->prepare("SELECT title,text,headimage FROM projects WHERE id = ?")) {
-	$stmt->bind_param("i", $_GET["id"]);
+	$stmt->bind_param("s", $_GET["id"]);
 	$stmt->execute();
 	$stmt->store_result();
 

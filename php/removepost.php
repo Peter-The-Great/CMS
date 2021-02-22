@@ -10,10 +10,18 @@ if (!isset($_SESSION["loggedin"])) {
 //Hier moet een get die de id uit de url gaat halen
 
 $id = $_GET["id"];
+$unlink = "../";
+$stmt = $conn->prepare("SELECT `headimage` FROM projects WHERE id = ?");
+$stmt->bind_param("s", $id);
+$stmt->execute();
+$stmt->store_result();
+$stmt->bind_result($Huidig);
+$stmt->fetch();
+unlink($unlink.$Huidig);
 
 if(isset($id)){
     $stmt = $conn->prepare("DELETE FROM projects WHERE id = ?");
-    $stmt->bind_param("i", $id);
+    $stmt->bind_param("s", $id);
     $stmt->execute();
 }
 

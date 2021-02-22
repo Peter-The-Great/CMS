@@ -6,7 +6,6 @@ if (!isset($_SESSION["loggedin"])) {
 	header("Location: ../index.php");
 	exit();
 }
-
 // Insert into DATABASE
 if(isset($_POST["title"], $_POST["text"], $_POST["subtext"], $_FILES['image'])){
 $image = $_FILES['image'];
@@ -15,15 +14,25 @@ $imagenaam = $image['name'];
 $type = $image['type'];
 $map = 'uploads/';
 $Toegestaan = array("image/jpg","image/jpeg","image/png","image/gif");
+$titel = strip_tags(htmlspecialchars($_POST['title']));
+function uuidv4(){
+	$data = openssl_random_pseudo_bytes(16);
 
+	$data[6] = chr(ord($data[6]) & 0x0f | 0x40);
+	$data[8] = chr(ord($data[8]) & 0x3f | 0x80);
+
+	return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
+}
+$afbeelding = $map.$imagenaam;
+$new_str = str_replace(' ', '', $afbeelding);
 if (in_array($type,$Toegestaan)){
-    move_uploaded_file($Tijdelijk, "../".$map.$imagenaam);
+    move_uploaded_file($Tijdelijk, "../".$new_str);
 }else{
     header("Location: createpost.php?error=nietgeupload");
 }
-$afbeelding = $map.$imagenaam;
-    if ($stmt = $conn->prepare("INSERT INTO projects (id, title, subtext, text, headimage) values (NULL,?, ?, ?, ?)")) {
-        $stmt->bind_param("ssss", $_POST['title'], $_POST['subtext'], $_POST['text'], $afbeelding);
+$randomid = uuidv4();
+    if ($stmt = $conn->prepare("INSERT INTO projects (id, title, subtext, text, headimage) values (?, ?, ?, ?, ?)")) {
+        $stmt->bind_param("sssss", $randomid, $titel, $_POST['subtext'], $_POST['text'], $new_str);
         $stmt->execute();
         header("Location: ../admin/dashboard.php");
     } 

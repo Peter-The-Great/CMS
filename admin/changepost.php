@@ -7,7 +7,7 @@ if (!isset($_SESSION["loggedin"])) {
 }
 
 if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM projects WHERE id = ?")) {
-    $stmt->bind_param("i", $_GET["id"]);
+    $stmt->bind_param("s", $_GET["id"]);
     $stmt->execute();
     $stmt->store_result();
 
