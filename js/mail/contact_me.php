@@ -4,7 +4,7 @@ if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || 
   http_response_code(500);
   exit();
 }
-
+//Make sure there are no specialcharchter strings attached
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email = strip_tags(htmlspecialchars($_POST['email']));
 $phone = strip_tags(htmlspecialchars($_POST['phone']));
@@ -18,6 +18,7 @@ $body = "You have received a new message from your website contact form.\n\n"."H
 $header = "From: noreply@Gmail.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $header .= "Reply-To: $email";	
 //mail($to, $subject, $body, $header);
+//this will send the mail to the subject or else there will be an http response code of 500
 if(!mail($to, $subject, $body, $header)){
 	http_response_code(500);
 }

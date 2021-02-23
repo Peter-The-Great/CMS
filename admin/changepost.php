@@ -24,9 +24,10 @@ if($stmt = $conn->prepare("SELECT title,subtext,text,headimage FROM projects WHE
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php require("style.php"); ?>
-    <!-- Script Tiny CME -->
+    <!-- Script Tiny MCE -->
     <script src="https://cdn.tiny.cloud/1/swq7hpikkqwjjze9ad6mykwgy37w7e1mlvbbslqdqokoedyw/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
+    	//this is for the tiny mce configuration for both textarea's 
         tinymce.init({
             selector: '#subtext',
             height: '200',

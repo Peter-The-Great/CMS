@@ -8,7 +8,7 @@ if (!isset($_SESSION["loggedin"])) {
 }
 
 //Hier moet een get die de id uit de url gaat halen
-
+//basic delete function and deletion of an image with the part itself
 $id = $_GET["id"];
 $unlink = "../";
 $stmt = $conn->prepare("SELECT `headimage` FROM projects WHERE id = ?");

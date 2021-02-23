@@ -18,7 +18,7 @@ if(isset($_POST["title"], $_POST["text"], $_POST["subtext"], $_POST['Huidige_Afb
     $unlink = "../";
     $Toegestaan = array("image/jpg","image/jpeg", "image/png", "image/gif");
     $sql = "";
-    
+    //if it has no image dont put the post in a query
     if (empty($Afbeelding) || $Afbeelding['size'] == 0) {
     $sql = "UPDATE projects SET title=?, subtext=?, text=? WHERE id=?";
     if ($stmt = $conn->prepare($sql)) {
@@ -30,7 +30,7 @@ if(isset($_POST["title"], $_POST["text"], $_POST["subtext"], $_POST['Huidige_Afb
     else {
         header('Location: ../admin/changepost.php?error=mysql');
     }
-} 
+}//but if it does have an image and the image is not the same image then we will proceed to put it in the query and unlink the previous set image
 elseif ($Afbeeldingnaam != $Huidig && in_array($type, $Toegestaan)) {
         unlink($unlink.$Huidig);
         $imagenew = $map.$Afbeeldingnaam;

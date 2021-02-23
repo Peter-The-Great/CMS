@@ -7,7 +7,7 @@
         return false;
     }
 
-
+//here we are making a prepared statement so that we can use it to find our user.
     if($stmt = $conn->prepare("SELECT id,username,password FROM users WHERE username = ?")) {
         $stmt->bind_param("s", $_POST["username"]);
         $stmt->execute();
@@ -16,8 +16,9 @@
         if ($stmt->num_rows > 0) {
             $stmt->bind_result($id, $username, $password);
             $stmt->fetch();
-            
+            //check for password and keep password in mind
             $pswrd = $_POST["password"];
+            //for later if you want to change password
             $_SESSION['wachtwoord'] = $pswrd;
             if (sha1($pswrd) === $password) {
                 session_regenerate_id();
