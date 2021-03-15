@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700&display=swap');
+html {
+    position: relative;
+    min-height: 100%;
+}
 header {
 	background-color: black;
 	background-image: url("../uploads/profile/background2.jpg");
@@ -52,9 +56,10 @@ header h1 {
 
 #article, #contact, #biografie {
 	margin-top: 40px;
-	
 }
-
+#contact{
+    margin-bottom: 4rem !important;
+}
 #article .card .card-body {
 	color: white;
 	background: linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.35) 8%);
@@ -86,6 +91,7 @@ article {
     margin-left: 20px;
 }
 .footer{
+    position: absolute;
 	width: 100%;
     bottom: 0;
     height: 60px;

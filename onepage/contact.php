@@ -2,7 +2,7 @@
 			<h1>Contact</h1>
 			<p>Heeft u vragen? Contacteer ons. We reageren zo snel mogelijk terug.</p>
 		</div>
-	<section class="container mb-5 card card-body" id="contact">
+	<section class="container card card-body" id="contact">
 		<div class="row">
                     <div class="col-lg-6 mx-auto">
                         <form id="contactForm" name="sentMessage" novalidate="novalidate">
