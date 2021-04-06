@@ -38,8 +38,7 @@ $result = $conn->query($sql);
                         <p class='read'><a class='stretched-link' href='post.php?id=".$item['id']."'>Lees verder...</a></p>
                     </div>
                 </article>
-                </div>                
-                ";
+                </div>";
                 }
                 ?>
 			</div>
